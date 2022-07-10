@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/DetailTheme.ExpenseLog"
+
+    tools:context=".NewTransactionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary">
+
+        <TextView
+            android:id="@+id/newTransactionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:text="New Transaction"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:id="@+id/typeSpinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textAlignment="textEnd"
+            android:text="Type: "
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:spinnerMode="dropdown"
+            android:id="@+id/typeSpinner"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/categorySpinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeSpinnerLayout"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textAlignment="textEnd"
+            android:text="Category: "
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:spinnerMode="dropdown"
+            android:id="@+id/categorySpinner"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/amountLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categorySpinnerLayout"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textAlignment="textEnd"
+            android:text="Amount: "
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="80dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:gravity="center"
+                android:text="$"
+                android:textSize="30sp"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/amountEditText"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="80dp"
+
+                android:inputType="number|numberDecimal|phone"
+                android:hint="0.00"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textAlignment="center">
+
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dateLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amountLayout"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="80dp"
+            android:text="Date: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textAlignment="textEnd"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="datePickerTapped"
+            android:text="date"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            style="?android:spinnerStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notesLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dateLayout"
+        android:layout_above="@id/buttonsLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:text="Notes"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/notesEditText"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="start"
+
+            android:textAlignment="viewStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Save"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:onClick="saveTapped"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:onClick="cancelTapped"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

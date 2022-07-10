@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Expense Log</string>
+    <string-array name="types">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>Home</item>
+        <item>Food</item>
+        <item>Family</item>
+        <item>Debt</item>
+        <item>Health</item>
+        <item>Personal</item>
+        <item>Transportation</item>
+        <item>Entertainment</item>
+        <item>Miscellaneous</item>
+        <item>Custom...</item>
+    </string-array>
+</resources>

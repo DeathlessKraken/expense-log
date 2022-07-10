@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/listLayout"
+    tools:context=".ListActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topToolBar"
+        android:background="@color/purple_500">
+
+        <Button
+            android:id="@+id/sortButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple_200"
+            android:onClick="showSortTapped"
+            android:text="SORT"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/filterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/purple_200"
+            android:onClick="showFilterTapped"
+            android:text="FILTER"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <android.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/transactionSearchView"
+        android:iconifiedByDefault="false"
+        android:queryHint="Transaction Name">
+
+    </android.widget.SearchView>
+
+    <LinearLayout
+        android:id="@+id/filterTabsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="All"
+            android:id="@+id/allFilter"
+            android:background="@color/purple_500"
+            android:onClick="allFilterTapped"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Credits"
+            android:id="@+id/creditFilter"
+            android:background="@color/purple_500"
+            android:onClick="creditFilterTapped"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Debits"
+            android:id="@+id/debitFilter"
+            android:background="@color/purple_500"
+            android:onClick="debitFilterTapped"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sortTabsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Type"
+            android:background="@color/purple_500"
+            android:onClick="typeTapped"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="A-Z"
+            android:background="@color/purple_500"
+            android:onClick="alphabeticallyTapped"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Date"
+            android:background="@color/purple_500"
+            android:onClick="dateTapped"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sortTabsLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Category"
+            android:background="@color/purple_500"
+            android:onClick="categoryTapped"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Amount"
+            android:background="@color/purple_500"
+            android:onClick="amountTapped"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/transactionListView"/>
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:id="@+id/addNewButton"
+        app:layout_anchor="@id/transactionListView"
+        app:layout_anchorGravity="bottom|end|right"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@android:color/white"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="fabTapped"
+
+        app:srcCompat="@drawable/ic_add"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

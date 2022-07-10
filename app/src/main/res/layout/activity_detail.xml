@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/DetailTheme.ExpenseLog"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/transactionCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:text="Category"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:id="@+id/transactionAmount"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/transactionCategory"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Date"
+        android:id="@+id/transactionDate"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/transactionAmount"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Notes"
+        android:id="@+id/transactionNotes"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/moneyEventDateTextView"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/transactionNotes">
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="EDIT"
+            android:onClick="editTapped"/>
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:text="DELETE"
+            android:onClick="deleteTapped"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
